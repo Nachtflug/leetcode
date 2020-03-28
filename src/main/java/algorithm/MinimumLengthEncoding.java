@@ -36,21 +36,17 @@ public class MinimumLengthEncoding {
 
         Group initGroup = Group.of(words, 0);
         List<Group> groups = initGroup.divide();
-        List<Group> pured = new ArrayList<>(words.length);
 
+        int l = 0;
         while (groups.size() > 0) {
             Group g = groups.remove(0);
             if (g.isPure()) {
-                pured.add(g);
+                l += g.length() + 1;
             } else {
                 groups.addAll(g.divide());
             }
         }
 
-        int l = 0;
-        for (Group group : pured) {
-            l += group.length() + 1;
-        }
         return l;
     }
 
