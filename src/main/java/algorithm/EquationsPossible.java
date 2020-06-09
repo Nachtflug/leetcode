@@ -59,9 +59,9 @@ public class EquationsPossible {
         }
 
         void notifyValueChangeTo(int val) {
+            if (this.val == val) return;
             this.val = val;
-            cons.stream().filter(n -> n.val != val)
-                    .forEach(n -> n.notifyValueChangeTo(val));
+            cons.forEach(n -> n.notifyValueChangeTo(val));
         }
 
         static Node of(int v) {
