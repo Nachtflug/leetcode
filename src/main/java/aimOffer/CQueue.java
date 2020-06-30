@@ -49,10 +49,11 @@ public class CQueue {
     }
 
     public int deleteHead() {
-        if (emitter.isEmpty())
+        if (emitter.isEmpty()) {
             load();
-        if (emitter.isEmpty())
-            return -1;
+            if (emitter.isEmpty())
+                return -1;
+        }
         return emitter.pop();
     }
 
