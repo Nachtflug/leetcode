@@ -25,7 +25,7 @@ import java.util.Stack;
  *
  * 提示：
  *
- *
+ *+
  * 	1 <= values <= 10000
  * 	最多会对 appendTail、deleteHead 进行 10000 次调用
  *
